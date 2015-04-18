@@ -1,0 +1,31 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="clause" extends="struts-default">
+		<action name="searchClause" method="search" class="clauseAction">
+			<result name="success">/WEB-INF/jsp/clause/list.jsp</result>
+		</action>
+		
+		<action name="displayClause" method="display" class="clauseAction">
+			
+			<result name="success">/WEB-INF/jsp/clause/displayclause.jsp</result>
+		</action>
+		
+		<action name="updateClause" method="update" class="clauseAction">
+			<result name="input">/WEB-INF/jsp/clause/displayclause.jsp</result>
+			<result name="success" type="redirect">displayClause.action?id=${clause.id}</result>
+		</action>
+		
+		<action name="deleteClause" method="delete" class="clauseAction">
+			<result name="input">/WEB-INF/jsp/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/clause/list.jsp</result>
+		</action>
+		
+		<action name="createClause" method="create" class="clauseAction">
+			<result name="input">/WEB-INF/jsp/clause/createclause.jsp</result>
+			<result name="success" type="redirect">displayClause.action?id=${clause.id}</result>
+		</action>
+		
+	</package>
+</struts>

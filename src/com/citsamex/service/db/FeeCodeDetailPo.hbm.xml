@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.service.db.FeeCodeDetailPo" table="T_FEE_CODE_DETAIL">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>		
+
+		<property name="groupId" column="GROUP_ID"></property>
+		<property name="validPeriod" column="VALID_PERIOD"></property>
+		<property name="productCode" column="PRODUCT_CODE"></property>
+		<property name="moneyRangeFrom" column="MONEY_RANGE_FROM"></property>
+		<property name="moneyRangeTo" column="MONEY_RANGE_TO"></property>
+		<property name="feeAmt" column="FEE_AMT"></property>
+		<property name="feePercent" column="FEE_PERCENT"></property>
+		<property name="feeMethod" column="FEE_METHOD"></property>
+		<property name="feeType" column="FEE_TYPE"></property>
+		<property name="custno" column="CUSTNO"></property>
+		<property name="relationId" column="RELATION_ID"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME" update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+	</class>
+
+	<class name="com.citsamex.service.db.FeeCodeDetailHisPo" table="T_FEE_CODE_DETAIL_HIS">
+		<id name="seq" type="java.lang.Long">
+			<column name="seq" />
+			<generator class="native" />
+		</id>
+		<property name="id" column="ID"></property>
+		<property name="groupId" column="GROUP_ID"></property>
+		<property name="validPeriod" column="VALID_PERIOD"></property>
+		<property name="productCode" column="PRODUCT_CODE"></property>
+		<property name="moneyRangeFrom" column="MONEY_RANGE_FROM"></property>
+		<property name="moneyRangeTo" column="MONEY_RANGE_TO"></property>
+		<property name="feeAmt" column="FEE_AMT"></property>
+		<property name="feePercent" column="FEE_PERCENT"></property>
+		<property name="feeMethod" column="FEE_METHOD"></property>
+		<property name="feeType" column="FEE_TYPE"></property>
+		<property name="custno" column="CUSTNO"></property>
+		<property name="relationId" column="RELATION_ID"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME" update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+		<property name="logdatetime" column="LOGDATETIME"></property>
+	</class>
+
+</hibernate-mapping>

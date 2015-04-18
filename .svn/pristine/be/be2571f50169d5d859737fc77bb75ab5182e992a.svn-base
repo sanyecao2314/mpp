@@ -1,0 +1,17 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="login" extends="struts-default">
+		<action name="login" method="login" class="loginAction">
+			<result name="input">login.jsp</result>
+			<result name="success" type="chain">index</result>
+		</action>
+		<action name="logout" method="logout" class="loginAction">
+			<result name="success" type="redirect">/login.jsp</result>
+		</action>
+		<action name="index" method="index" class="loginAction">
+			<result name="success" type="redirect">redirect.action?url=home</result>
+		</action>		
+	</package>
+</struts>

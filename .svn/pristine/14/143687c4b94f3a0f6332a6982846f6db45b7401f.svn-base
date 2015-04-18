@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.service.db.ContactPo" table="T_CONTACT">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<property name="firstname" column="FIRSTNAME"></property>
+		<property name="lastname" column="LASTNAME"></property>
+		<property name="firstname_en" column="FIRSTNAME_EN"></property>
+		<property name="lastname_en" column="LASTNAME_EN"></property>
+		<property name="title" column="TITLE"></property>
+		<property name="homephone" column="HOME_PHONE"></property>
+		<property name="officephone" column="OFFICE_PHONE"></property>
+		<property name="faxno" column="FAXNO"></property>
+		<property name="email" column="EMAIL"></property>
+		<property name="mobile" column="MOBILE"></property>
+		<property name="secretary" column="SECRETARY"></property>
+		<property name="custno" column="CUSTNO"></property>
+		
+		<property name="relationId" column="RELATION_ID"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME"
+			update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+	</class>
+
+	<class name="com.citsamex.service.db.ContactHisPo" table="T_CONTACT_HIS">
+		<id name="seq" type="java.lang.Long">
+			<column name="seq" />
+			<generator class="native" />
+		</id>
+		<property name="id" column="ID"></property>
+		<property name="firstname" column="FIRSTNAME"></property>
+		<property name="lastname" column="LASTNAME"></property>
+		<property name="firstname_en" column="FIRSTNAME_EN"></property>
+		<property name="lastname_en" column="LASTNAME_EN"></property>
+		<property name="title" column="TITLE"></property>
+		<property name="homephone" column="HOME_PHONE"></property>
+		<property name="officephone" column="OFFICE_PHONE"></property>
+		<property name="faxno" column="FAXNO"></property>
+		<property name="email" column="EMAIL"></property>
+		<property name="mobile" column="MOBILE"></property>
+		<property name="secretary" column="SECRETARY"></property>
+		
+		<property name="custno" column="CUSTNO"></property>
+		
+		<property name="relationId" column="RELATION_ID"></property>
+		<property name="createuserno" column="CREATEUSERNO"></property>
+		<property name="createdatetime" column="CREATEDATETIME"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+		<property name="logdatetime" column="LOGDATETIME"></property>
+	</class>
+</hibernate-mapping>

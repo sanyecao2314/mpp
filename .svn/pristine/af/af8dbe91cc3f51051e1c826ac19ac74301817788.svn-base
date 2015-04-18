@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.app.config.db.FieldDesc" table="T_C_FIELD_DESC">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="entityNo" column="ENTITYNO"></property>
+		<property name="fieldName" column="FIELDNAME"></property>
+		<property name="description" column="DESCRIPTION"></property>
+		<property name="lv" column="LV"></property>
+	</class>
+
+</hibernate-mapping>

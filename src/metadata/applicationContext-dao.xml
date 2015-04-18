@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="dao" class="com.citsamex.service.db.BaseDao" abstract="true">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+
+	<bean id="customerDao" class="com.citsamex.service.db.CustomerDao"
+		parent="dao">
+	</bean>
+
+	<bean id="clauseDao" class="com.citsamex.service.db.ClauseDao"
+		parent="dao">
+	</bean>
+
+	<bean id="productDao" class="com.citsamex.service.db.ProductDao"
+		parent="dao">
+	</bean>
+
+	<bean id="companyDao" class="com.citsamex.service.db.CompanyDao"
+		parent="dao">
+	</bean>
+
+	<bean id="commonDao" class="com.citsamex.service.db.CommonDao"
+		parent="dao">
+	</bean>
+
+	<bean id="travelerDao" class="com.citsamex.service.db.TravelerDao"
+		parent="dao">
+	</bean>
+	<bean id="validDao" class="com.citsamex.app.validate.db.ValidDao"
+		parent="dao">
+	</bean>
+
+	<!-- <bean id="HR_hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate"> 
+		<property name="sessionFactory" ref="HR_SessionFactory" /> </bean> <bean 
+		id="loginDao" class="com.citsamex.service.db.LoginDao"> <property name="hibernateTemplate" 
+		ref="HR_hibernateTemplate" /> </bean> -->
+
+
+
+</beans>
+

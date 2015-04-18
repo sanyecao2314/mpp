@@ -1,0 +1,42 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="customer" extends="struts-default">
+		<action name="searchCust" method="search" class="customerAction">
+			<result name="input">/WEB-INF/jsp/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/cust/list.jsp</result>
+		</action>
+
+		<action name="displayCust" method="display" class="customerAction">
+			<result name="success">/WEB-INF/jsp/cust/displaycust.jsp</result>
+		</action>
+
+		<action name="updateCust" method="update" class="customerAction">
+			<result name="input">/WEB-INF/jsp/cust/displaycust.jsp</result>
+			<result name="success" type="redirect">displayCust.action?id=${customer.id}&amp;tabSelected=${tabSelected}
+			</result>
+		</action>
+
+		<action name="deleteCust" method="delete" class="customerAction">
+			<result name="input">/WEB-INF/jsp/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/cust/list.jsp</result>
+		</action>
+
+		<action name="createCust" method="create" class="customerAction">
+			<result name="input">/WEB-INF/jsp/cust/createcust.jsp</result>
+			<result name="success" type="redirect">displayCust.action?id=${customer.id}
+			</result>
+		</action>
+
+		<action name="cfgCust" method="cfgCust" class="customerAction">
+			<result name="success">/WEB-INF/jsp/home/barcfg.jsp</result>
+		</action>
+		
+		<action name="preUpload" method="preUpload" class="uploadAction">
+			<result name="input">/WEB-INF/jsp/form/uploadlist.jsp</result>
+			<result name="success">/WEB-INF/jsp/form/uploadinfo.jsp</result>
+		</action>
+		
+	</package>
+</struts>

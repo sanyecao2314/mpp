@@ -1,0 +1,15 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="home" extends="struts-default">		
+		<action name="redirect" method="redirect" class="redirectAction">
+			<result name="success">/WEB-INF/jsp/${url }/index.jsp</result>
+		</action>
+		
+		<action name="form" method="form" class="redirectAction">
+			<result>/WEB-INF/jsp/form/${form }</result>
+		</action>
+		
+	</package>
+</struts>

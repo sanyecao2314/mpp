@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd ">
+
+	<bean name="customerService" class="com.citsamex.service.CustomerService">
+		<property name="dao" ref="customerDao"></property>
+		<property name="clauseDao" ref="clauseDao"></property>
+	</bean>
+
+	<bean name="productService" class="com.citsamex.service.ProductService">
+		<property name="dao" ref="productDao"></property>
+	</bean>
+
+	<bean name="companyService" class="com.citsamex.service.CompanyService">
+		<property name="dao" ref="companyDao"></property>
+		<property name="custdao" ref="customerDao"></property>
+		<property name="clauseDao" ref="clauseDao"></property>
+		<property name="travdao" ref="travelerDao"></property>
+		<property name="travelerService" ref="travelerService"></property>
+	</bean>
+
+	<bean name="travelerService" class="com.citsamex.service.TravelerService">
+		<property name="dao" ref="travelerDao"></property>
+		<property name="custdao" ref="customerDao"></property>
+		<property name="compdao" ref="companyDao"></property>
+		<property name="commondao" ref="commonDao"></property>
+		<property name="validatorManager" ref="validatorManager"></property>
+
+	</bean>
+	
+	<!-- impdate from ppp. add by fans.fan  150124 -->
+	<bean name="PPPImpService" class="com.citsamex.service.PPPImpService">
+		<property name="travelerService" ref="travelerService"></property>
+		<property name="travelerDao" ref="travelerDao"></property>
+		<property name="companyDao" ref="companyDao"></property>
+	</bean>
+	<bean name="pppImpServiceJob" class="com.citsamex.service.PPPImpServiceJob">
+		<property name="travelerService" ref="travelerService"></property>
+		<property name="PPPImpService" ref="PPPImpService"></property>
+		<property name="travelerDao" ref="travelerDao"></property>
+		<property name="companyDao" ref="companyDao"></property>
+	</bean>
+	<!-- end by fans.fan -->
+	
+	<bean name="commonService" class="com.citsamex.service.CommonService">
+		<property name="commonDao" ref="commonDao"></property>
+	</bean>
+
+	<bean name="services" class="com.citsamex.service.Services">
+		<property name="pool">
+			<map>
+				<entry key="customer" value-ref="customerService"></entry>
+				<entry key="product" value-ref="productService"></entry>
+				<entry key="company" value-ref="companyService"></entry>
+				<entry key="traveler" value-ref="travelerService"></entry>
+				<entry key="common" value-ref="commonService"></entry>
+			</map>
+		</property>
+
+	</bean>
+
+
+	<bean name="validatorManager" class="com.citsamex.app.validate.ValidatorManager"
+		init-method="init">
+		<property name="dao" ref="validDao"></property>
+	</bean>
+
+	<!-- Load Par -->
+	<bean name="loadParJob" class="com.citsamex.service.LoadParJob">
+		<property name="service" ref="travelerService" />
+	</bean>
+
+	<bean id="loadPar"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="loadParJob" />
+		<property name="targetMethod" value="start" />
+	</bean>
+
+	<bean id="trigger_loadPar" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="loadPar" />
+		<property name="repeatInterval" value="60000" />
+		<property name="startDelay" value="300000" />
+	</bean>
+
+	<!-- sync centralprofile -->
+	<bean name="syncCPJob" class="com.citsamex.service.SyncCentralProfileJob">
+	</bean>
+
+	<bean id="syncCP"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="syncCPJob" />
+		<property name="targetMethod" value="start" />
+	</bean>
+
+	<bean id="trigger_syncCP" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="syncCP" />
+		<property name="repeatInterval" value="300000" />
+		<property name="startDelay" value="300000" />
+	</bean>
+
+	<!-- sync systems -->
+	<bean name="syncSysJob" class="com.citsamex.service.SyncSystemsJob">
+		<property name="service" ref="travelerService" />
+	</bean>
+
+	<bean id="syncSys"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="syncSysJob" />
+		<property name="targetMethod" value="start" />
+	</bean>
+
+	<bean id="trigger_syncSys" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="syncSys" />
+		<property name="repeatInterval" value="3600000" />
+		<property name="startDelay" value="300000" />
+	</bean>
+
+	<!-- presync pars -->
+	<bean name="presyncSysJob" class="com.citsamex.service.PreSyncParJob">
+		<property name="service" ref="travelerService" />
+	</bean>
+
+	<bean id="presyncSys"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="presyncSysJob" />
+		<property name="targetMethod" value="start" />
+	</bean>
+	
+
+	<bean id="trigger_presyncSys" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="presyncSys" />
+		<property name="repeatInterval" value="60000" />
+		<property name="startDelay" value="300000" />
+	</bean>
+	
+	<!-- sync from ppp .add by fans.fan 150124 -->
+	<bean id="impparfromppp" 
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="pppImpServiceJob" />
+		<property name="targetMethod" value="start" />
+	</bean>
+
+	<bean id="trigger_impparfromppp" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="impparfromppp" />
+		<property name="repeatInterval" value="60000" />
+		<property name="startDelay" value="3000" />
+	</bean>
+	<!-- end by fans.fan  -->
+
+	<!-- sync barpar -->
+	<bean name="syncBarparJob" class="com.citsamex.service.SyncBParJob">
+
+	</bean>
+
+	<bean id="syncBarpar"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="syncBarparJob" />
+		<property name="targetMethod" value="start" />
+	</bean>
+
+	<bean id="trigger_syncBarpar" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="syncBarpar" />
+		<property name="repeatInterval" value="5000" />
+		<property name="startDelay" value="90000" />
+	</bean>
+
+	<!-- change bar -->
+	<bean name="changeBarJob" class="com.citsamex.service.ChangeBarJob">
+		<property name="service" ref="travelerService" />
+	</bean>
+
+	<bean id="changeBar"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="changeBarJob" />
+		<property name="targetMethod" value="start" />
+	</bean>
+
+	<bean id="trigger_changeBarJob" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="changeBar" />
+		<property name="repeatInterval" value="30000" />
+		<property name="startDelay" value="300000" />
+	</bean>
+
+	<!-- reSyncPar -->
+	<bean name="reSyncParJob" class="com.citsamex.service.ReSyncParJob">
+
+	</bean>
+
+	<bean id="reSyncPar"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="reSyncParJob" />
+		<property name="targetMethod" value="start" />
+	</bean>
+
+	<bean id="trigger_reSyncPar" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="reSyncPar" />
+		<property name="repeatInterval" value="300000" />
+		<property name="startDelay" value="300000" />
+	</bean>
+
+	<!-- Mail -->
+	<bean name="mailJob" class="com.citsamex.service.MailJob">
+
+	</bean>
+
+	<bean id="mail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="mailJob" />
+		<property name="targetMethod" value="start" />
+	</bean>
+
+	<bean id="trigger_mail" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="mail" />
+		<property name="repeatInterval" value="1800000" />
+		<property name="startDelay" value="300000" />
+	</bean>
+
+	<bean autowire="no"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+			<!-- -->
+			<!--	sync data from ppp.	-->
+				<ref local="trigger_impparfromppp" />
+			
+				<ref local="trigger_loadPar" />
+				<ref local="trigger_syncCP" />
+				<ref local="trigger_syncBarpar" />
+				<ref local="trigger_presyncSys" />
+				<ref local="trigger_changeBarJob" />
+				<ref local="trigger_mail" /> 
+			</list>
+		</property>
+	</bean>
+</beans>

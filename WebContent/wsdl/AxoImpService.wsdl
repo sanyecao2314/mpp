@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.citsamex.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.citsamex.com" xmlns:intf="http://service.citsamex.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.citsamex.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="transport">
+    <complexType>
+     <sequence>
+      <element name="xml" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="transportResponse">
+    <complexType>
+     <sequence>
+      <element name="transportReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateFields">
+    <complexType>
+     <sequence>
+      <element name="custno" type="xsd:string"/>
+      <element name="fields" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateFieldsResponse">
+    <complexType>
+     <sequence>
+      <element name="updateFieldsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="transportESB">
+    <complexType>
+     <sequence>
+      <element name="custno" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="transportESBResponse">
+    <complexType>
+     <sequence>
+      <element name="transportESBReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTmr">
+    <complexType>
+     <sequence>
+      <element name="tmrNo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTmrResponse">
+    <complexType>
+     <sequence>
+      <element name="getTmrReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="transportESBResponse">
+
+      <wsdl:part element="impl:transportESBResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="transportRequest">
+
+      <wsdl:part element="impl:transport" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="transportESBRequest">
+
+      <wsdl:part element="impl:transportESB" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="transportResponse">
+
+      <wsdl:part element="impl:transportResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTmrRequest">
+
+      <wsdl:part element="impl:getTmr" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateFieldsResponse">
+
+      <wsdl:part element="impl:updateFieldsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTmrResponse">
+
+      <wsdl:part element="impl:getTmrResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateFieldsRequest">
+
+      <wsdl:part element="impl:updateFields" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AxoImpService">
+
+      <wsdl:operation name="transport">
+
+         <wsdl:input message="impl:transportRequest" name="transportRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:transportResponse" name="transportResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateFields">
+
+         <wsdl:input message="impl:updateFieldsRequest" name="updateFieldsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateFieldsResponse" name="updateFieldsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="transportESB">
+
+         <wsdl:input message="impl:transportESBRequest" name="transportESBRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:transportESBResponse" name="transportESBResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTmr">
+
+         <wsdl:input message="impl:getTmrRequest" name="getTmrRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTmrResponse" name="getTmrResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AxoImpServiceSoapBinding" type="impl:AxoImpService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="transport">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="transportRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="transportResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateFields">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateFieldsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateFieldsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="transportESB">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="transportESBRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="transportESBResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTmr">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTmrRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTmrResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AxoImpServiceService">
+
+      <wsdl:port binding="impl:AxoImpServiceSoapBinding" name="AxoImpService">
+
+         <wsdlsoap:address location="http://localhost:7080/mpp/services/AxoImpService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr//dwr20.dtd">
+<dwr>
+	<allow>
+		<create creator="spring" javascript="services">
+			<param name="beanName" value="services" />
+			<include method="call" />
+			<include method="queryTony" />
+		</create>
+	
+		<convert match="com.citsamex.service.ServiceMessage" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.action.Clause" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.action.Customer" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.action.Product" converter="hibernate3"></convert>
+		<convert match="com.citsamex.app.action.Page" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.AddressPo" converter="hibernate3" javascript="JSAddress"></convert>
+		<convert match="com.citsamex.service.db.ContactPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.ClausePo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.CustomerPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.DiscountPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.EBillingPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.action.Company" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.action.Traveler" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.CreditCardPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.MemberPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.ExtraPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.PreferencePo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.FeeCodePo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.FeeCodeDetailPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.Code" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.ReasonCodePo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.PurposeCodePo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.TravelerPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.CompanyPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.GmaxNoPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.DBIPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.db.VisaPo" converter="hibernate3"></convert>
+		<convert match="com.citsamex.app.cfg.Element" converter="hibernate3"></convert>
+		<convert match="com.citsamex.app.cfg.ElementMap" converter="hibernate3"></convert>
+		<convert match="com.citsamex.service.tony.Tony" converter="hibernate3"></convert>
+		
+	</allow>
+</dwr>

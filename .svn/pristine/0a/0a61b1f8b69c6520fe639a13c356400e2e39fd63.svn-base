@@ -1,0 +1,48 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="company" extends="struts-default">
+		<action name="searchComp" method="search" class="companyAction">
+			<result name="input">/WEB-INF/jsp/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/comp/list.jsp</result>
+		</action>
+
+		<action name="displayComp" method="display" class="companyAction">
+			<result name="success">/WEB-INF/jsp/comp/displaycomp.jsp</result>
+		</action>
+
+		<action name="updateComp" method="update" class="companyAction">
+			<result name="input">/WEB-INF/jsp/comp/displaycomp.jsp</result>
+			<result name="success" type="redirect">displayComp.action?id=${company.id}&amp;tabSelected=${tabSelected}
+			</result>
+		</action>
+
+		<action name="deleteComp" method="delete" class="companyAction">
+			<result name="input">/WEB-INF/jsp/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/comp/list.jsp</result>
+		</action>
+
+		<action name="createComp" method="create" class="companyAction">
+			<result name="step1">/WEB-INF/jsp/comp/createcomp_1.jsp</result>
+			<result name="input">/WEB-INF/jsp/comp/createcomp_2.jsp</result>
+			<result name="success" type="redirect">displayComp.action?id=${company.id}
+			</result>
+		</action>
+
+		<action name="download" method="download" class="uploadAction">
+			<result name="success" type="stream">
+				<param name="inputName">file</param>
+				<param name="contentType">${contentType};charset=UTF-8</param>
+				<param name="contentDisposition">${contentDisposition}</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="upload" method="upload" class="uploadAction">
+			<result name="error" type="redirect">displayComp.action?id=${companyId}&amp;excelCurX=${excelCurX}&amp;excelCurY=${excelCurY}&amp;sheetNo=${sheetNo}&amp;errorMessage=${errorMessage}
+			</result>
+			<result name="success" type="redirect">displayComp.action?id=${companyId}
+			</result>
+		</action>
+	</package>
+</struts>

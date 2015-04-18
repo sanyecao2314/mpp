@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean name="loginAction" class="com.citsamex.app.action.LoginAction"
+		scope="prototype">
+		<!-- <property name="dao" ref="loginDao"></property> -->
+	</bean>
+
+	<bean name="clauseAction" class="com.citsamex.service.action.ClauseAction"
+		scope="prototype">
+		<property name="service" ref="customerService"></property>
+	</bean>
+
+	<bean name="productAction" class="com.citsamex.service.action.ProductAction"
+		scope="prototype">
+		<property name="service" ref="productService"></property>
+	</bean>
+
+	<bean name="customerAction" class="com.citsamex.service.action.CustomerAction"
+		scope="prototype">
+		<property name="service" ref="customerService"></property>
+		<property name="prdService" ref="productService"></property>
+	</bean>
+
+	<bean name="travelerAction" class="com.citsamex.service.action.TravelerAction"
+		scope="prototype">
+		<property name="service" ref="travelerService"></property>
+		<property name="compService" ref="companyService"></property>
+		<property name="custService" ref="customerService"></property>
+		<property name="prdService" ref="productService"></property>
+	</bean>
+
+	<bean name="synchronizeAction" class="com.citsamex.service.action.SynchronizeAction"
+		scope="prototype">
+		<property name="tService" ref="travelerService"></property>
+		<property name="cService" ref="companyService"></property>
+		<property name="gService" ref="customerService"></property>
+	</bean>
+
+	<bean name="redirectAction" class="com.citsamex.app.action.RedirectAction"
+		scope="prototype">
+	</bean>
+
+	<bean name="companyAction" class="com.citsamex.service.action.CompanyAction"
+		scope="prototype">
+		<property name="service" ref="companyService"></property>
+		<property name="custService" ref="customerService"></property>
+		<property name="prdService" ref="productService"></property>
+		<property name="travelerService" ref="travelerService"></property>
+		
+	</bean>
+
+	<bean name="uploadAction" class="com.citsamex.app.action.UploadAction"
+		scope="prototype">
+		<property name="compdao" ref="companyDao"></property>
+		<property name="travdao" ref="travelerDao"></property>
+		<property name="travService" ref="travelerService"></property>
+	</bean>
+
+</beans>

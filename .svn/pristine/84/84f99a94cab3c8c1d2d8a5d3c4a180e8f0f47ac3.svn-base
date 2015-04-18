@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Profile>
+	<Group id="customer id" name="customer name">
+		<Company id="company id" gmaxNo="" companyNo="" companyName=""
+			reqStmt="" feeBased="" intAirplus="" securityGroup="" custType=""
+			tcProfile="" policy="" costcenter="" sales="" officeaddress=""
+			ebilling="" lowestFareReasonCode="" purposeCode="" tripDate=""
+			dateOfBooking="" customerRefernce="" tripRequistition="" jobNumber=""
+			projectNumber="" accountNumber="" jobTitle="" fareType=""
+			shortLongHaul="" destination="" iataFare="" businessReqNo=""
+			internetAddress="" insuranceNo="" licenseNo="" iataNumber=""
+			security="" acOpenDate="" acCloseDate="" remarks="" status="">
+
+			<Addresses>
+				<Address id="1" catalog="">address1</Address>
+				<Address id="2" catalog="">address2</Address>
+			</Addresses>
+
+			<Contacts>
+				<Contact id="" firstname="" lastname="" firstnameEn=""
+					lastnameEN="" title="" homePhone="" officePhone="" faxNo="" email=""></Contact>
+			</Contacts>
+
+			<CreditCards>
+				<CreditCard id="" vendor="" cardNo="" expiry=""
+					holderName="" type="" merchantNo="" billType="" preferenceCard=""
+					remark="">
+				</CreditCard>
+			</CreditCards>
+
+			<Discounts>
+				<Discount var="" product="" rate="" remark="">
+					<Product></Product>
+					<Rate></Rate>
+					<Remark></Remark>
+				</Discount>
+			</Discounts>
+
+			<Ebillings>
+				<Ebilling id="" fieldName="" defaultValue="" mandatory="true" />
+			</Ebillings>
+
+			<Terms>
+				<Feecode varname="" feeType="" fareCode="" defaultGroup=""
+					groupId="">
+					<Detail groupId="" period="" id="" productCode=""
+						moneyRangeFrom="" moneyRangeTo="" feeAmt="" feePercent=""
+						feeCodeId="" feeMethod="" feeType="">
+					</Detail>
+
+				</Feecode>
+			</Terms>
+
+			<Travelers>
+				<Traveler id="" companyId="" companyName="" travelerNo=""
+					travelerName="" firstname="" lastname="" firstnameEn="" lastnameEn=""
+					gender="" travelerType="" maritalStatus="" alias="" icidNo=""
+					insuranceNo="" internet="" country="" nationality1="" nationality2=""
+					birthday="" security="" jobTitle="" department1="" department2=""
+					employeeNo="" costcenter="" tr="" projectNumber="" accountNumber=""
+					reqStatement="" feeBased="" securityGroup="" custCategory=""
+					custType="" tcProfile="" exitPermitNo="" exitPermitExpDate=""
+					passport1="" passport1Type="" issueDate1="" expiryDate1=""
+					passport2="" passport2Type="" issueDate2="" expiryDate2=""
+					ebilling="" officeaddress="" title="" mobile="" officePhone=""
+					faxNo="" email="">
+
+					<Addresses>
+						<Address id="1" catalog="">address1</Address>
+						<Address id="2" catalog="">address2</Address>
+					</Addresses>
+
+					<Contacts>
+						<Contact id="" firstname="" lastname="" firstnameEn=""
+							lastnameEN="" title="" homePhone="" officePhone="" faxNo=""
+							email=""></Contact>
+					</Contacts>
+
+					<CreditCards>
+						<CreditCard id="" vendor="" cardNo="" expiry=""
+							holderName="" type="" merchantNo="" billType="" preferenceCard=""
+							remark="">
+						</CreditCard>
+					</CreditCards>
+
+					<Ebillings>
+						<ebilling id="" fieldName="" defaultValue="" mandatory="true" />
+					</Ebillings>
+
+					<Terms>
+						<Feecode varname="" feeType="" fareCode="" defaultGroup=""
+							groupId="">
+							<Group id="">
+								<Period from="" to="">
+									<Detail id="" productCode="" moneyRangeFrom=""
+										moneyRangeTo="" feeAmt="" feePercent="" feeCodeId=""
+										feeMethod="" feeType="">
+									</Detail>
+								</Period>
+							</Group>
+						</Feecode>
+					</Terms>
+
+					<Members>
+						<Member id="" prodType="" memberNo="" memberName=""
+							memberCode="" memberIssue="" memberExpire="" remark="" />
+					</Members>
+
+					<RequireDatas>
+						<RequireData id="" level="" fieldName="" mandatory=""
+							action="" displayOrder="" defaultValue="" />
+					</RequireDatas>
+
+					<Preferences>
+						<Preference id="" catalog="" type="" value1="" value2=""
+							remark="">
+						</Preference>
+					</Preferences>
+				</Traveler>
+			</Travelers>
+
+		</Company>
+	</Group>
+</Profile>

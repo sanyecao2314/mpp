@@ -1,0 +1,35 @@
+<?xml version="1.0"  encoding="utf-8" ?>
+<project default="pack" basedir=".">
+	<target name="pack">
+
+		<property name="project" value="mpp">
+		</property>
+
+		<mkdir dir="${project}" />
+		<mkdir dir="${project}/WEB-INF/lib" />
+
+		<copy todir="${project}">
+			<fileset dir="WebContent">
+			</fileset>
+		</copy>
+
+		<copy todir="${project}/WEB-INF">
+			<fileset dir="build">
+			</fileset>
+		</copy>
+
+		<war destfile="${project}.war">
+			<fileset dir="${project}" />
+		</war>
+
+		<delete dir="${project}">
+		</delete>
+
+	</target>
+
+	<target name="jar">
+		<jar basedir="build\classes" jarfile="mpp.jar">
+		</jar>
+	</target>
+
+</project>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.service.db.CompanyPo" table="T_COMPANY">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<property name="custId" column="CUSTID"></property>
+		<property name="gmaxNo" column="GMAX_NO"></property>
+		<property name="companyNo" column="COMPANY_NO"></property>
+		<property name="companyName" column="COMPANY_NAME"></property>
+		<property name="alias" column="alias"></property>
+		<property name="reqStmt" column="REQ_STMT"></property>
+		<property name="feeBased" column="FEE_BASED"></property>
+		<property name="intAirplus" column="INT_AIRPLUS"></property>
+		<property name="securityGroup" column="SECURITY_GROUP"></property>
+		<property name="custType" column="CUSTTYPE"></property>
+		<property name="tcProfile" column="TC_PROFILE"></property>
+		<property name="policy" column="POLICY"></property>
+		<property name="costcenter" column="COSTCENTERS"></property>
+		<property name="sales" column="SALES"></property>
+		<property name="officeaddress" column="OFFICEADDR"></property>
+		<property name="ebilling" column="EBILLING"></property>
+		<property name="lowestFareReasonCode" column="LOWEST_FARE_REASON_CODE"></property>
+		<property name="purposeCode" column="PURPOSE_CODE"></property>
+		<property name="tripDate" column="TRIP_DATE"></property>
+		<property name="dateOfBooking" column="DATE_OF_BOOKING"></property>
+		<property name="customerRefernce" column="CUSTOMER_REFERENCE"></property>
+		<property name="tripRequistition" column="TRIP_REQUISITION"></property>
+		<property name="jobNumber" column="JOB_NUMBER"></property>
+		<property name="projectNumber" column="PROJECT_NUMBER"></property>
+		<property name="accountNumber" column="ACCOUNT_NUMBER"></property>
+		<property name="jobTitle" column="JOB_TITLE"></property>
+		<property name="FareType" column="FARE_TYPE"></property>
+		<property name="shortLongHaul" column="SHORT_LONG_HAUL"></property>
+		<property name="destination" column="DESTINATION"></property>
+		<property name="iataFare" column="IATA_FARE"></property>
+		<property name="businessReqNo" column="BUSINESS_REG_NO"></property>
+		<property name="internetAddress" column="INTERNETAD"></property>
+		<property name="insuranceNo" column="INSURANCE_NO"></property>
+		<property name="licenseNo" column="LICENSE_NO"></property>
+		<property name="iataNumber" column="IATA_NUMBER"></property>
+		<property name="security" column="SECURITY"></property>
+		<property name="acOpenDate" column="AC_OPEN_Date"></property>
+		<property name="acCloseDate" column="AC_CLOSE_Date"></property>
+		<property name="remarks" column="REMARKS"></property>
+		<property name="status" column="STATUS"></property>
+		<property name="dirty" column="DIRTY"></property>
+		<property name="statusRemark" column="STATUS_REMARK"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME"
+			update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+		<property name="syncMessage" column="SYNCMSG"></property>
+
+		<property name="lockuser" column="LOCKUSER"></property>
+		<property name="lock" column="LOCK"></property>
+		<property name="tmrRemark" column="TMR_REMARK"></property>
+	</class>
+
+	<class name="com.citsamex.service.db.CompanyHisPo" table="T_COMPANY_HIS">
+		<id name="seq" type="java.lang.Long">
+			<column name="seq" />
+			<generator class="native" />
+		</id>
+		<property name="id" column="ID"></property>
+		<property name="custId" column="CUSTID"></property>
+		<property name="gmaxNo" column="GMAX_NO"></property>
+		<property name="companyNo" column="COMPANY_NO"></property>
+		<property name="companyName" column="COMPANY_NAME"></property>
+		<property name="alias" column="alias"></property>
+		<property name="reqStmt" column="REQ_STMT"></property>
+		<property name="feeBased" column="FEE_BASED"></property>
+		<property name="intAirplus" column="INT_AIRPLUS"></property>
+		<property name="securityGroup" column="SECURITY_GROUP"></property>
+		<property name="custType" column="CUSTTYPE"></property>
+		<property name="tcProfile" column="TC_PROFILE"></property>
+		<property name="policy" column="POLICY"></property>
+		<property name="costcenter" column="COSTCENTERS"></property>
+		<property name="sales" column="SALES"></property>
+		<property name="officeaddress" column="OFFICEADDR"></property>
+		<property name="ebilling" column="EBILLING"></property>
+		<property name="lowestFareReasonCode" column="LOWEST_FARE_REASON_CODE"></property>
+		<property name="purposeCode" column="PURPOSE_CODE"></property>
+		<property name="tripDate" column="TRIP_DATE"></property>
+		<property name="dateOfBooking" column="DATE_OF_BOOKING"></property>
+		<property name="customerRefernce" column="CUSTOMER_REFERENCE"></property>
+		<property name="tripRequistition" column="TRIP_REQUISITION"></property>
+		<property name="jobNumber" column="JOB_NUMBER"></property>
+		<property name="projectNumber" column="PROJECT_NUMBER"></property>
+		<property name="accountNumber" column="ACCOUNT_NUMBER"></property>
+		<property name="jobTitle" column="JOB_TITLE"></property>
+		<property name="FareType" column="FARE_TYPE"></property>
+		<property name="shortLongHaul" column="SHORT_LONG_HAUL"></property>
+		<property name="destination" column="DESTINATION"></property>
+		<property name="iataFare" column="IATA_FARE"></property>
+		<property name="businessReqNo" column="BUSINESS_REG_NO"></property>
+		<property name="internetAddress" column="INTERNETAD"></property>
+		<property name="insuranceNo" column="INSURANCE_NO"></property>
+		<property name="licenseNo" column="LICENSE_NO"></property>
+		<property name="iataNumber" column="IATA_NUMBER"></property>
+		<property name="security" column="SECURITY"></property>
+		<property name="acOpenDate" column="AC_OPEN_Date"></property>
+		<property name="acCloseDate" column="AC_CLOSE_Date"></property>
+		<property name="remarks" column="REMARKS"></property>
+		<property name="status" column="STATUS"></property>
+		<property name="dirty" column="DIRTY"></property>
+		<property name="statusRemark" column="STATUS_REMARK"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME"
+			update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+		<property name="logdatetime" column="LOGDATETIME"></property>
+		<property name="lockuser" column="LOCKUSER"></property>
+		<property name="lock" column="LOCK"></property>
+		<property name="tmrRemark" column="TMR_REMARK"></property>
+	</class>
+</hibernate-mapping>

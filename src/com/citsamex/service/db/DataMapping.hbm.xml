@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.service.db.DataMapping" table="T_S_DATA_MAP">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="catalog" column="CATALOG"></property>
+		<property name="action" column="ACTION"></property>
+		<property name="custno" column="CUSTNO"></property>
+		<property name="mpp" column="MPP"></property>
+
+		<property name="ps" column="PS"></property>
+		<property name="axo" column="AXO"></property>
+		<property name="bs" column="BS"></property>
+		<property name="sys1" column="SYS1"></property>
+		<property name="sys2" column="SYS2"></property>
+		<property name="sys3" column="SYS3"></property>
+	</class>
+</hibernate-mapping>

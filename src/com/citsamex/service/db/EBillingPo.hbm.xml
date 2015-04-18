@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.service.db.EBillingPo" table="T_EBILL">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<property name="fieldName" column="FIELD_NAME"></property>
+		<property name="defaultValue" column="DEFAULT_VALUE"></property>
+		<property name="mandatory" column="MANDATORY"></property>
+		<property name="custno" column="CUSTNO"></property>
+		<property name="relationId" column="RELATION_ID"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME" update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+	</class>
+
+	<class name="com.citsamex.service.db.EBillingHisPo" table="T_EBILL_HIS">
+		<id name="seq" type="java.lang.Long">
+			<column name="seq" />
+			<generator class="native" />
+		</id>
+		<property name="id" column="ID"></property>
+		<property name="fieldName" column="FIELD_NAME"></property>
+		<property name="defaultValue" column="DEFAULT_VALUE"></property>
+		<property name="mandatory" column="MANDATORY"></property>
+		<property name="custno" column="CUSTNO"></property>
+		<property name="relationId" column="RELATION_ID"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME" update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+		<property name="logdatetime" column="LOGDATETIME"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.service.db.PreferencePo" table="T_PREFER">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<property name="catalog" column="CATALOG"></property>
+		<property name="type" column="TYPE"></property>
+		<property name="value1" column="VALUE1"></property>
+		<property name="value2" column="VALUE2"></property>
+		<property name="remark" column="REMARK"></property>
+		<property name="custno" column="CUSTNO"></property>
+		<property name="relationId" column="RELATION_ID"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME" update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+	</class>
+
+	<class name="com.citsamex.service.db.PreferenceHisPo" table="T_PREFER_HIS">
+		<id name="seq" type="java.lang.Long">
+			<column name="seq" />
+			<generator class="native" />
+		</id>
+		<property name="id" column="ID"></property>
+		<property name="catalog" column="CATALOG"></property>
+		<property name="type" column="TYPE"></property>
+		<property name="value1" column="VALUE1"></property>
+		<property name="value2" column="VALUE2"></property>
+		<property name="remark" column="REMARK"></property>
+		<property name="custno" column="CUSTNO"></property>
+		<property name="relationId" column="RELATION_ID"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME" update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+		<property name="logdatetime" column="LOGDATETIME"></property>
+	</class>
+
+</hibernate-mapping>

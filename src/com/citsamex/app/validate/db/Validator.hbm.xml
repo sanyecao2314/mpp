@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.app.validate.db.ValidatorPo" table="T_VALIDATOR">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<property name="name" column="NAME_"></property>
+		<property name="classname" column="CLASSNAME"></property>
+	</class>
+
+	<class name="com.citsamex.app.validate.db.ParameterPo" table="T_VALIDATOR_PARAMETER">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="validid" column="VALIDATOR_ID"></property>
+		<property name="name" column="PARAMETER_NAME"></property>
+	</class>
+
+	<class name="com.citsamex.app.validate.db.ValidObjectPo" table="T_VALIDATOR_OBJECT">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="name" column="OBJECT_NAME"></property>
+		<property name="validator" column="VALIDATOR"></property>
+		<property name="parameters" column="PARAMETERS"></property>
+		<property name="message" column="MESSAGE"></property>
+	</class>
+
+</hibernate-mapping>

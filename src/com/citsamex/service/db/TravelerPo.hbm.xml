@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.service.db.TravelerPo" table="T_TRAVELER">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<property name="companyId" column="COMPANY_ID"></property>
+		<property name="companyName" column="COMPANY_NAME"></property>
+		<property name="travelerNo" column="TRAVELER_NO"></property>
+		<property name="travelerName" column="TRAVELER_NAME"></property>
+		<property name="travelerType" column="TRAVELER_TYPE"></property>
+		<property name="travelerRelation" column="TRAVELER_RELATION"></property>
+		<property name="otherTitle" column="OTHER_TITLE"></property>
+
+		<property name="firstname" column="FIRSTNAME"></property>
+		<property name="lastname" column="LASTNAME"></property>
+		<property name="firstnameEn" column="FIRSTNAME_EN"></property>
+		<property name="lastnameEn" column="LASTNAME_EN"></property>
+		<property name="gender" column="GENDER"></property>
+		<property name="maritalStatus" column="MARITAL_STATUS"></property>
+		<property name="alias" column="ALIAS"></property>
+		<property name="icidNo" column="ICID_NO"></property>
+		<property name="insuranceNo" column="INSURANCE_NO"></property>
+		<property name="internet" column="INTERNET"></property>
+		<property name="country" column="COUNTRY"></property>
+		<property name="nationality1" column="NATIONALITY1"></property>
+		<property name="nationality2" column="NATIONALITY2"></property>
+		<property name="birthday" column="BIRTHDAY"></property>
+		<property name="security" column="SECURITY"></property>
+		<property name="jobTitle" column="JOB_TITLE"></property>
+		<property name="department1" column="DEPARTMENT1"></property>
+		<property name="department2" column="DEPARTMENT2"></property>
+		<property name="employeeNo" column="EMPLOYEE_NO"></property>
+		<property name="costcenter" column="COSTCENTER"></property>
+		<property name="tr" column="TR"></property>
+		<property name="projectNumber" column="PROJECT_NUMBER"></property>
+		<property name="accountNumber" column="ACCOUNT_NUMBER"></property>
+		<property name="reqStatement" column="REQ_STMT"></property>
+		<property name="feeBased" column="FEE_BASED"></property>
+		<property name="securityGroup" column="SECURITY_GROUP"></property>
+		<property name="custCategory" column="CUST_CATEGORY"></property>
+		<property name="custType" column="CUSTTYPE"></property>
+		<property name="tcProfile" column="TC_PROFILE"></property>
+		<property name="exitPermitNo" column="EXIT_PERMIT_NO"></property>
+		<property name="exitPermitExpDate" column="EXIT_PERMIT_EXP_DATE"></property>
+		<property name="passport1" column="PASSPORT1"></property>
+		<property name="passport1Type" column="PASSPORT1_TYPE"></property>
+		<property name="issueDate1" column="ISSUE_DATE1"></property>
+		<property name="expiryDate1" column="EXPIRY_DATE1"></property>
+		<property name="passport2" column="PASSPORT2"></property>
+		<property name="passport2Type" column="PASSPORT2_TYPE"></property>
+		<property name="issueDate2" column="ISSUE_DATE2"></property>
+		<property name="expiryDate2" column="EXPIRY_DATE2"></property>
+
+		<property name="otherCard" column="OTHER_CARD"></property>
+		<property name="otherCardType" column="OTHER_CARD_TYPE"></property>
+		<property name="otherCardIssueDate" column="OTHER_CARD_ISSUE"></property>
+		<property name="otherCardExpiryDate" column="OTHER_CARD_EXPIRY"></property>
+
+		<property name="ebilling" column="EBILLING"></property>
+		<property name="status" column="STATUS"></property>
+		<property name="statusRemark" column="STATUS_REMARK"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME"
+			update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+		<property name="officeaddress" column="OFFICEADDRESS"></property>
+		<property name="dirty" column="DIRTY"></property>
+		<property name="title" column="TITLE"></property>
+		<property name="mobile" column="MOBILE"></property>
+		<property name="officePhone" column="OFFICEPHONE"></property>
+		<property name="faxNo" column="FAXNO"></property>
+		<property name="email" column="EMAIL"></property>
+		<property name="syncMessage" column="SYNCMSG"></property>
+
+		<property name="lockuser" column="LOCKUSER"></property>
+		<property name="lock" column="LOCK"></property>
+		<property name="homephone" column="HOMEPHONE"></property>
+		<property name="refno" column="REFNO"></property>
+		<property name="refno2" column="REFNO2"></property>
+		<property name="pppcmid" column="PPPCMID"></property>
+	</class>
+
+	<class name="com.citsamex.service.db.TravelerHisPo" table="T_TRAVELER_HIS">
+		<id name="seq" type="java.lang.Long">
+			<column name="seq" />
+			<generator class="native" />
+		</id>
+		<property name="id" column="ID"></property>
+		<property name="companyId" column="COMPANY_ID"></property>
+		<property name="companyName" column="COMPANY_NAME"></property>
+		<property name="travelerNo" column="TRAVELER_NO"></property>
+		<property name="travelerName" column="TRAVELER_NAME"></property>
+		<property name="travelerType" column="TRAVELER_TYPE"></property>
+		<property name="travelerRelation" column="TRAVELER_RELATION"></property>
+		<property name="otherTitle" column="OTHER_TITLE"></property>
+		<property name="firstname" column="FIRSTNAME"></property>
+		<property name="lastname" column="LASTNAME"></property>
+		<property name="firstnameEn" column="FIRSTNAME_EN"></property>
+		<property name="lastnameEn" column="LASTNAME_EN"></property>
+		<property name="gender" column="GENDER"></property>
+		<property name="maritalStatus" column="MARITAL_STATUS"></property>
+		<property name="alias" column="ALIAS"></property>
+		<property name="icidNo" column="ICID_NO"></property>
+		<property name="insuranceNo" column="INSURANCE_NO"></property>
+		<property name="internet" column="INTERNET"></property>
+		<property name="country" column="COUNTRY"></property>
+		<property name="nationality1" column="NATIONALITY1"></property>
+		<property name="nationality2" column="NATIONALITY2"></property>
+		<property name="birthday" column="BIRTHDAY"></property>
+		<property name="security" column="SECURITY"></property>
+		<property name="jobTitle" column="JOB_TITLE"></property>
+		<property name="department1" column="DEPARTMENT1"></property>
+		<property name="department2" column="DEPARTMENT2"></property>
+		<property name="employeeNo" column="EMPLOYEE_NO"></property>
+		<property name="costcenter" column="COSTCENTER"></property>
+		<property name="tr" column="TR"></property>
+		<property name="projectNumber" column="PROJECT_NUMBER"></property>
+		<property name="accountNumber" column="ACCOUNT_NUMBER"></property>
+		<property name="reqStatement" column="REQ_STMT"></property>
+		<property name="feeBased" column="FEE_BASED"></property>
+		<property name="securityGroup" column="SECURITY_GROUP"></property>
+		<property name="custCategory" column="CUST_CATEGORY"></property>
+		<property name="custType" column="CUSTTYPE"></property>
+		<property name="tcProfile" column="TC_PROFILE"></property>
+		<property name="exitPermitNo" column="EXIT_PERMIT_NO"></property>
+		<property name="exitPermitExpDate" column="EXIT_PERMIT_EXP_DATE"></property>
+		<property name="passport1" column="PASSPORT1"></property>
+		<property name="passport1Type" column="PASSPORT1_TYPE"></property>
+		<property name="issueDate1" column="ISSUE_DATE1"></property>
+		<property name="expiryDate1" column="EXPIRY_DATE1"></property>
+		<property name="passport2" column="PASSPORT2"></property>
+		<property name="passport2Type" column="PASSPORT2_TYPE"></property>
+		<property name="issueDate2" column="ISSUE_DATE2"></property>
+		<property name="expiryDate2" column="EXPIRY_DATE2"></property>
+
+		<property name="otherCard" column="OTHER_CARD"></property>
+		<property name="otherCardType" column="OTHER_CARD_TYPE"></property>
+		<property name="otherCardIssueDate" column="OTHER_CARD_ISSUE"></property>
+		<property name="otherCardExpiryDate" column="OTHER_CARD_EXPIRY"></property>
+
+		<property name="ebilling" column="EBILLING"></property>
+		<property name="status" column="STATUS"></property>
+		<property name="statusRemark" column="STATUS_REMARK"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME"
+			update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+		<property name="logdatetime" column="LOGDATETIME"></property>
+		<property name="officeaddress" column="OFFICEADDRESS"></property>
+		<property name="dirty" column="DIRTY"></property>
+		<property name="title" column="TITLE"></property>
+		<property name="mobile" column="MOBILE"></property>
+		<property name="officePhone" column="OFFICEPHONE"></property>
+		<property name="faxNo" column="FAXNO"></property>
+		<property name="email" column="EMAIL"></property>
+		<property name="lockuser" column="LOCKUSER"></property>
+		<property name="lock" column="LOCK"></property>
+		<property name="homephone" column="HOMEPHONE"></property>
+		<property name="refno" column="REFNO"></property>
+		<property name="refno2" column="REFNO2"></property>
+		<property name="pppcmid" column="PPPCMID"></property>
+	</class>
+</hibernate-mapping>

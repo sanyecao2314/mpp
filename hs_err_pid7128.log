@@ -1,0 +1,151 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d90e027, pid=7128, tid=5924
+#
+# Java VM: Java HotSpot(TM) Client VM (11.3-b02 mixed mode windows-x86)
+# Problematic frame:
+# V  [jvm.dll+0x5e027]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02523000):  VMThread [stack: 0x0c570000,0x0c5c0000] [id=5924]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x53221210
+
+Registers:
+EAX=0x024ac698, EBX=0x024ac6d4, ECX=0x53221204, EDX=0x6da8c108
+ESP=0x0c5bf798, EBP=0x0056e060, ESI=0x08cb91b8, EDI=0x08cb91b8
+EIP=0x6d90e027, EFLAGS=0x00010287
+
+Top of Stack: (sp=0x0c5bf798)
+0x0c5bf798:   08cb91b8 08cb91b8 6da2ed30 6d8ce78b
+0x0c5bf7a8:   08cb91b8 0c5bf7f0 0c5bf7f0 00000002
+0x0c5bf7b8:   024aa978 6d95f7b1 08cb97b8 024ac4f0
+0x0c5bf7c8:   6d95f581 024ac698 6d92ea93 0c5bf7f0
+0x0c5bf7d8:   00000000 024aa9d0 08cb97b8 6d95f397
+0x0c5bf7e8:   0c5bf7f0 00000000 6da948c8 08cb97b8
+0x0c5bf7f8:   00000000 6d95a103 08cb97b8 08cb97b8
+0x0c5bf808:   00000000 0c5bf920 00000000 6d9ef6e3 
+
+Instructions: (pc=0x6d90e027)
+0x6d90e017:   cc cc cc cc cc cc cc cc cc 51 56 8b f1 8b 4e 04
+0x6d90e027:   8b 51 0c 83 c1 08 8b c2 c1 f8 02 85 d2 89 54 24 
+
+
+Stack: [0x0c570000,0x0c5c0000],  sp=0x0c5bf798,  free space=317k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x5e027]
+
+VM_Operation (0x0df8f388): GenCollectForAllocation, mode: safepoint, requested by thread 0x0d903000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0d450000 JavaThread "Unknown thread" [_thread_blocked, id=6352, stack(0x0e2a0000,0x0e2f0000)]
+  0x0d922c00 JavaThread "Unknown thread" [_thread_blocked, id=4728, stack(0x0e210000,0x0e260000)]
+  0x0d90fc00 JavaThread "PÀ€$À€á—°à¡˜ä˜à¡›åµà¡—í²°à¡šä„€à¡›À€À€À€À€À€À€À€À€À€À€äŠ°à¡›í²°à¡šáŸ¸à¡—À€À€á¨à¡›À€1À€À€À€À€À€À€À€À€À€À€À€À€ë¹°à¢âš¨à¡›ä°à¡›â•¸à¡›ä˜à¡›â–à¡›á˜ à¡›À€À€À€À€À€À€â• à¡›À€À€áŒ à¡—À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€Ä€À€1À€À€í€€VÀ€À€À€À€æ˜àµŒÀ€À€èˆˆÉ–À€À€êº¸àµ¾À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€ À€å°¨à¡—ã‡°à¡›åŸ à¡—ã…˜à¡›ã˜à¡›ã±¸à¡›í«°à¡šã´˜à¡›í© à¡ší¢¨à¡ší˜à¡šÀ€À€á°¸à¡˜Å¸À€á—°à¡˜ÆˆÀ€ïŠà¡šÆŒÀ€À€À€À€À€ã±¸à¡›í«°à¡šã´˜à¡›í© à¡šâ²°à¡›â°ˆà¡›â­¸à¡›â«¨à¡›ã§¨à¡›À€À€×ˆÒ¨Ô¿À€À€À€À€çŒ à¡˜ä„€à¡›ë¹°à¢À€À€À€À€À€À€é ¨à£’À€À€À€À€À€À€À€À€À€À€À€À€À€À€á£ ÒµÀ€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€à»ˆà¡—Å®À€ä£¨à¡›ã›à¡¤æ¤¸à¡›À€À€À€À€å˜ˆà¡™á·¸à¡›î€¸à¡—î„€à¡—î¨ à¡™á¸à¡›á¸ à¡›á¸°à¡›ï‡€à¥¯áº¨à¡›å˜ˆà¡™á·¸à¡›î€¸à¡—ãª€à¡—åŒˆà¡—ã©°à¡—ãª à¡—å¸à¡—å’€à¡—ã«à¡—ã°à¡—î˜¨à¡šã°°à¡—îƒˆà¡—î„€à¡—î¨ à¡™á¸à¡›â©¨à¡—â©˜à¡—á¸ à¡›á¸°à¡›ä©¨à¡›á¯€à¡—á®¨à¡—î™ à¡šá¯à¡—ã®€à¡—á¹ à¡›á¯¨à¡—äŠˆà¡—äŠ¨à¡—áº¨à¡›á²°à¡—á­¸à¡—ã®°à¡—à  à¡—äˆ à¡—î€à¡—î°à¡—á»¨à¡›äª à¡›â¥°à¡—å à¡—â à¡—ã„€à¡—ä«ˆà¡›îš à¡šî›˜à¡—îŸ°à¡—å‹ à¡—â°à¡—î¡¸à¡—âµà¡—î¢à¡—ã‘€à¡—î¦ˆà¡—ä«¨à¡›î¨€à¡—î®à¡—á½˜à¡›î²°à¡—á½¸à¡›î´¸à¡—á¾ à¡›îœ à¡šã°à¡—åˆà¡—â€ˆà¡›î¹¨à¡—î»¨à¡—ä¬ˆà¡›ä¬°à¡›ä­ˆà¡›î˜à¡šï°à¡—ãƒà¡—ï†€à¡—ï‡à¡—ï‡¸à¡—ïˆ¸à¡—ï‰¨à¡—â°à¡›áˆà¡—â†¨à¡—á»ˆà¡—á»¸à¡—á¾¸à¡—âƒ à¡—á¨à¡—á¨à¡—á¢˜à¡—å¸à¡—ïà¡—â‚ˆà¡›áŸˆà¡—á  à¡—á¡ˆà¡—ï‘ à¡—â…°à¡—î à¡šï’à¡—ï“˜à¡—ï•°à¡—ï—¨à¡—ï™˜à¡—âŸˆà¡—ä­ à¡›ï™¨à¡—â¤€à¡—â¦ˆà¡—â¤˜à¡—ïš°à¡—â„˜à¡›ïŸ°à¡—ï à¡—î ˆà¡šî ˜à¡šä®€à¡›â¥ˆà¡—â¥ à¡—î¥ˆà¡šÂ€à¡™ä® à¡›â à¡—ï¤ˆà¡—ï¥¸à¡—ï§ à¡—ï© à¡—ä¯à¡›ï­˜à¡—î§˜à¡šå‹°à¡—ï® à¡—À€æ” à¡î€à¡—î°à¡—á»¨à¡›çŒ à¡˜â†¨à¡—è¤ à¢ëº˜à¢€ë¥¨à¢»âƒ à¡—á¨à¡—á¨à¡—á¢˜à¡—å¸à¡—ç°à¡Ÿâ‚ˆà¡›í²°à¡šæ¤¸à¡›á¡ˆà¡—ï‘ à¡—è” à¢î à¡šï’à¡—ï“˜à¡—ï•°à¡—ï—¨à¡—î¥ˆà¡šÂ€à¡™ç˜à¡›ì¦à¡¡î•à¡Ÿï¥¸à¡—ï§ à¡—ï© à¡—ä¯à¡›ä°ˆà¡›ï°€à¡—ï°°à¡—ï²¸à¡—ä°¨à¡›ï³˜à¡—ä±˜à¡›á¥¸à¡˜ï¹à¡—ä² à¡›ä à¡—ä´¨à¡›ï½¸à¡—ï¾˜à¡—ä¸à¡—ï¿ à¡—ä€à¡—äµà¡›Æà¡˜â‰ à¡›Ç€à¡˜äµ¸à¡›Ğ˜à¡˜Ñ€à¡˜Ó¸à¡˜Õ€à¡˜î°à¡šä¶¨à¡›ä·˜à¡›Úˆà¡˜ä¸ˆà¡›à¡ à¡˜à¢à¡˜î´ˆà¡šê± à¡˜å°à¡—à§˜à¡˜ä¹à¡›î´¸à¡šäº¨à¡›ä»¸à¡›à¿¨à¡˜î·¸à¡šâà¡›á„°à¡˜á…¸à¡˜áŠ€à¡˜ä½à¡›ä¾° daemon [_thread_blocked, id=3504, stack(0x0e180000,0x0e1d0000)]
+  0x0d90e800 
+[error occurred during error reporting (printing all threads), id 0xc0000005]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0056b4c8] UNKNOWN - owner thread: 0x02523000
+[0x0056b928] UNKNOWN - owner thread: 0x0d903000
+
+Heap
+ def new generation   total 1216K, used 128K [0x04570000, 0x046c0000, 0x04a50000)
+  eden space 1088K,   0% used [0x04570000, 0x04570000, 0x04680000)
+  from space 128K, 100% used [0x046a0000, 0x046c0000, 0x046c0000)
+  to   space 128K,   0% used [0x04680000, 0x04680000, 0x046a0000)
+ tenured generation   total 15652K, used 15556K [0x04a50000, 0x05999000, 0x08570000)
+   the space 15652K,  99% used [0x04a50000, 0x05981160, 0x05199200, 0x05999000)
+ compacting perm gen  total 20480K, used 20361K [0x08570000, 0x09970000, 0x0c570000)
+   the space 20480K,  99% used [0x08570000, 0x09952658, 0x09922800, 0x09970000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\bin\javaw.exe
+0x775e0000 - 0x77760000 	C:\Windows\SysWOW64\ntdll.dll
+0x75370000 - 0x75480000 	C:\Windows\syswow64\kernel32.dll
+0x75320000 - 0x75367000 	C:\Windows\syswow64\KERNELBASE.dll
+0x75280000 - 0x75320000 	C:\Windows\syswow64\ADVAPI32.dll
+0x77130000 - 0x771dc000 	C:\Windows\syswow64\msvcrt.dll
+0x75480000 - 0x75499000 	C:\Windows\SysWOW64\sechost.dll
+0x765d0000 - 0x766c0000 	C:\Windows\syswow64\RPCRT4.dll
+0x74f80000 - 0x74fe0000 	C:\Windows\syswow64\SspiCli.dll
+0x74f70000 - 0x74f7c000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x76fe0000 - 0x770e0000 	C:\Windows\syswow64\USER32.dll
+0x75150000 - 0x751e0000 	C:\Windows\syswow64\GDI32.dll
+0x76dd0000 - 0x76dda000 	C:\Windows\syswow64\LPK.dll
+0x76a00000 - 0x76a9d000 	C:\Windows\syswow64\USP10.dll
+0x764d0000 - 0x76530000 	C:\Windows\system32\IMM32.DLL
+0x76d00000 - 0x76dcc000 	C:\Windows\syswow64\MSCTF.dll
+0x7c340000 - 0x7c396000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\msvcr71.dll
+0x6d8b0000 - 0x6db06000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\client\jvm.dll
+0x72a60000 - 0x72a92000 	C:\Windows\system32\WINMM.dll
+0x723b0000 - 0x723fc000 	C:\Windows\system32\apphelp.dll
+0x6d340000 - 0x6d348000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\hpi.dll
+0x775b0000 - 0x775b5000 	C:\Windows\syswow64\PSAPI.DLL
+0x6d430000 - 0x6d459000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\jdwp.dll
+0x6d750000 - 0x6d756000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\npt.dll
+0x6d860000 - 0x6d86c000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\verify.dll
+0x6d3e0000 - 0x6d3ff000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\java.dll
+0x6d8a0000 - 0x6d8af000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\zip.dll
+0x6d2b0000 - 0x6d2b7000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\dt_socket.dll
+0x76590000 - 0x765c5000 	C:\Windows\syswow64\WS2_32.dll
+0x75260000 - 0x75266000 	C:\Windows\syswow64\NSI.dll
+0x73690000 - 0x736a0000 	C:\Windows\system32\NLAapi.dll
+0x73680000 - 0x73690000 	C:\Windows\system32\napinsp.dll
+0x73660000 - 0x73672000 	C:\Windows\system32\pnrpnsp.dll
+0x748e0000 - 0x7491c000 	C:\Windows\System32\mswsock.dll
+0x73850000 - 0x73894000 	C:\Windows\system32\DNSAPI.dll
+0x73650000 - 0x73658000 	C:\Windows\System32\winrnr.dll
+0x70af0000 - 0x70b0c000 	C:\Windows\system32\IPHLPAPI.DLL
+0x74240000 - 0x74247000 	C:\Windows\system32\WINNSI.DLL
+0x73610000 - 0x73648000 	C:\Windows\System32\fwpuclnt.dll
+0x73600000 - 0x73606000 	C:\Windows\system32\rasadhlp.dll
+0x74220000 - 0x74225000 	C:\Windows\System32\wshtcpip.dll
+0x6d6c0000 - 0x6d6d3000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\net.dll
+0x748d0000 - 0x748d6000 	C:\Windows\System32\wship6.dll
+0x74540000 - 0x74556000 	C:\Windows\system32\CRYPTSP.dll
+0x74500000 - 0x7453b000 	C:\Windows\system32\rsaenh.dll
+0x77110000 - 0x77127000 	C:\Windows\syswow64\USERENV.dll
+0x76fd0000 - 0x76fdb000 	C:\Windows\syswow64\profapi.dll
+0x6d840000 - 0x6d848000 	D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\sunmscapi.dll
+0x76aa0000 - 0x76bc0000 	C:\Windows\syswow64\CRYPT32.dll
+0x75710000 - 0x7571c000 	C:\Windows\syswow64\MSASN1.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:59890 -Dfile.encoding=UTF-8 
+java_command: com.fans.test.SpringTest
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\develop\JDK\jdk1.7.0
+PATH=D:\Program Files (x86)\myeclipse\common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin;D:/develop/JDK/jdk1.7.0/bin/../jre/bin/client;D:/develop/JDK/jdk1.7.0/bin/../jre/bin;D:/develop/JDK/jdk1.7.0/bin/../jre/lib/i386;D:\develop\JDK\jdk1.7.0\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;D:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;D:\Program Files (x86)\VisualSVN Server\bin;D:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;D:\Program Files\Microsoft SQL Server\110\Tools\Binn\;D:\Program Files\Microsoft SQL Server\110\DTS\Binn\;D:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;D:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;D:\develop\IDE\eclipse;
+USERNAME=arvin.mi
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 Build 7601 Service Pack 1
+
+CPU:total 8 (8 cores per cpu, 2 threads per core) family 6 model 10 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, ht
+
+Memory: 4k page, physical 4194303k(3992328k free), swap 4194303k(4194303k free)
+
+vm_info: Java HotSpot(TM) Client VM (11.3-b02) for windows-x86 JRE (1.6.0_13-b03), built on Mar  9 2009 01:15:24 by "java_re" with MS VC++ 7.1
+
+time: Sat Jan 17 14:16:32 2015
+elapsed time: 855 seconds
+

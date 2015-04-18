@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.service.db.CardbinPo" table="T_C_CARDBIN">
+		<id name="cid" type="java.lang.Long">
+			<column name="cid" />
+			<generator class="native" />
+		</id>
+
+		<property name="bankname"></property>
+		<property name="cardname"></property>
+		<property name="cardbin"></property>
+		<property name="cardcate"></property>
+		<property name="cardtype"></property>
+		<property name="CREDIT_INST_KEY"></property>
+
+	</class>
+
+</hibernate-mapping>

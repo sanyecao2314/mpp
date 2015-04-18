@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+                   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+
+	<bean id="myDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.microsoft.sqlserver.jdbc.SQLServerDriver</value>
+		</property>
+
+		<property name="url">
+			<value>jdbc:sqlserver://10.181.57.233;databaseName=MPP</value>
+		<!-- 
+			<value>jdbc:sqlserver://10.181.57.61;databaseName=MPP</value>
+		 -->
+		</property>
+
+		<property name="username">
+			<value>mpptest</value>
+			<!-- 
+			<value>mpplive</value>
+			 -->
+		</property>
+		<property name="password">
+			<value>mpptestpwd</value>
+			<!-- 
+			<value>MpPp@swd</value>
+			 -->
+		</property> 
+		
+	
+ 		<!-- 
+			<property name="url">
+				<value>jdbc:sqlserver://10.181.57.36;databaseName=MPP</value>
+			</property>
+			 <property name="username">
+				<value>sa</value>
+			</property>
+			<property name="password">
+				<value>CITSAMEXsha696</value>
+			</property>  -->
+		
+
+		<!-- <property name="url"> <value>jdbc:sqlserver://10.181.57.36;databaseName=MPP</value> 
+			</property> <property name="username"> <value>sa</value> </property> <property 
+			name="password"> <value>CITSAMEXsha696</value> </property> -->
+
+
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"
+		scope="singleton">
+		<property name="dataSource" ref="myDataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>com/citsamex/service/db/CustomerPo.hbm.xml</value>
+				<value>com/citsamex/service/db/ClausePo.hbm.xml</value>
+				<value>com/citsamex/service/db/ProductPo.hbm.xml</value>
+				<value>com/citsamex/service/db/CompanyPo.hbm.xml</value>
+				<value>com/citsamex/service/db/AddressPo.hbm.xml</value>
+				<value>com/citsamex/service/db/ContactPo.hbm.xml</value>
+				<value>com/citsamex/service/db/DiscountPo.hbm.xml</value>
+				<value>com/citsamex/service/db/EBillingPo.hbm.xml</value>
+				<value>com/citsamex/service/db/TravelerPo.hbm.xml</value>
+				<value>com/citsamex/service/db/CreditCardPo.hbm.xml</value>
+				<value>com/citsamex/service/db/MemberPo.hbm.xml</value>
+				<value>com/citsamex/service/db/ExtraPo.hbm.xml</value>
+				<value>com/citsamex/service/db/PreferencePo.hbm.xml</value>
+				<value>com/citsamex/service/db/FeeCodePo.hbm.xml</value>
+				<value>com/citsamex/service/db/FeeCodeDetailPo.hbm.xml</value>
+				<value>com/citsamex/service/db/PurposeCodePo.hbm.xml</value>
+				<value>com/citsamex/service/db/ReasonCodePo.hbm.xml</value>
+				<value>com/citsamex/service/db/GmaxNoPo.hbm.xml</value>
+				<value>com/citsamex/service/db/DBIPo.hbm.xml</value>
+				<value>com/citsamex/service/db/DataMapping.hbm.xml</value>
+				<value>com/citsamex/service/db/VisaPo.hbm.xml</value>
+				<value>com/citsamex/app/validate/db/Validator.hbm.xml</value>
+				<value>com/citsamex/app/cfg/Element.hbm.xml</value>
+				<value>com/citsamex/service/db/CardbinPo.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+          <props>
+              <prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+              <prop key="hibernate.hbm2ddl.auto">update</prop>
+              <prop key="hibernate.show_sql">false</prop>
+          </props>
+          
+          <!--  
+                <value>
+                    hibernate.dialect=org.hibernate.dialect.SQLServerDialect
+                    hibernate.hbm2ddl.auto=update               
+                </value>
+           -->
+		</property>
+	</bean>
+
+	<!-- <bean id="HR_Datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName"> <value>com.microsoft.sqlserver.jdbc.SQLServerDriver</value> 
+		</property> <property name="url"> <value>jdbc:sqlserver://10.181.57.209;databaseName=CITSAMEX</value> 
+		</property> <property name="username"> <value>develop</value> </property> 
+		<property name="password"> <value>develop249</value> </property> </bean> -->
+
+	<!-- <bean id="HR_SessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean" 
+		scope="singleton"> <property name="dataSource" ref="HR_Datasource" /> <property 
+		name="hibernateProperties"> <value> hibernate.dialect=org.hibernate.dialect.SQLServerDialect 
+		</value> </property> </bean> -->
+
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="nestedTransactionAllowed" value="true" />
+	</bean>
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager" >
+		<tx:attributes>
+		<!-- 
+			<tx:method name="*" propagation="SUPPORTS" />
+			impDataFromPPP
+			 -->
+			<tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+        <aop:pointcut id="baseServiceTxOperation" expression="execution(* com.citsamex.service.*.*(..))" />  
+        <aop:advisor pointcut-ref="baseServiceTxOperation" advice-ref="txAdvice"/>
+    </aop:config>
+</beans>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.app.cfg.Element" table="T_BAR_CFG">
+
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="name" column="NAME_"></property>
+		<property name="text" column="VALUE_"></property>
+		<property name="color" column="COLOR_"></property>
+		<property name="bgColor" column="BGCOLOR_"></property>
+		<property name="left" column="LEFT_"></property>
+		<property name="top" column="TOP_"></property>
+		<property name="path" column="PATH_"></property>
+		<property name="path2" column="PATH2_"></property>
+		<property name="seq" column="SEQ_"></property>
+		<property name="company" column="COMPANY"></property>
+		<property name="description" column="DESCRIPTION"></property>
+		<property name="createusername" column="CREATEUSERNAME"></property>
+		<property name="createdatetime" column="CREATEDATETIME"></property>
+		<property name="updateusername" column="UPDATEUSERNAME"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+
+	</class>
+
+	<class name="com.citsamex.app.cfg.ElementMap" table="T_BAR_CFG_MAP">
+
+		<composite-id>
+			<key-property name="cpid" column="CP_ID" />
+			<key-property name="psfield" column="PS_FIELD" />
+		</composite-id>
+
+		<property name="field" column="FIELD"></property>
+
+	</class>
+	
+	<class name="com.citsamex.app.cfg.ElementHisPo" table="T_BAR_CFG_HIS">
+        <id name="uuid" type="java.lang.Long">
+            <column name="UUID" />
+            <generator class="native" />
+        </id>
+        <property name="id" column="ID"></property>
+        <property name="name" column="NAME_"></property>
+        <property name="text" column="VALUE_"></property>
+        <property name="color" column="COLOR_"></property>
+        <property name="bgColor" column="BGCOLOR_"></property>
+        <property name="left" column="LEFT_"></property>
+        <property name="top" column="TOP_"></property>
+        <property name="path" column="PATH_"></property>
+        <property name="path2" column="PATH2_"></property>
+        <property name="seq" column="SEQ_"></property>
+        <property name="company" column="COMPANY"></property>
+        <property name="description" column="DESCRIPTION"></property>
+        <property name="createusername" column="CREATEUSERNAME" update="false"></property>
+        <property name="createdatetime" column="CREATEDATETIME" update="false"></property>
+        <property name="updateusername" column="UPDATEUSERNAME"></property>
+        <property name="updatedatetime" column="UPDATEDATETIME"></property>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.citsamex.service.db.CreditCardPo" table="T_CCARD">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<property name="vendor" column="VENDOR"></property>
+		<property name="institution" column="INSTITUTION"></property>
+		<property name="cardNo" column="CCARD_NO"></property>
+		<property name="expiry" column="EXPIRYDATE"></property>
+
+
+		<property name="holderName" column="HOLDERNAME"></property>
+		<property name="type" column="CARDTYPE"></property>
+
+		<property name="merchantNo" column="MERCHANT_NO"></property>
+		<property name="billType" column="BILLTYPE"></property>
+		<property name="preferenceCard" column="PREFERRED_CARD"></property>
+		<property name="remark" column="REMARK"></property>
+		<property name="custno" column="CUSTNO"></property>
+		<property name="relationId" column="RELATION_ID"></property>
+		<property name="createuserno" column="CREATEUSERNO" update="false"></property>
+		<property name="createdatetime" column="CREATEDATETIME"
+			update="false"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+	</class>
+
+	<class name="com.citsamex.service.db.CreditCardHisPo" table="T_CCARD_HIS">
+		<id name="seq" type="java.lang.Long">
+			<column name="seq" />
+			<generator class="native" />
+		</id>
+		<property name="id" column="ID"></property>
+		<property name="vendor" column="VENDOR"></property>
+		<property name="institution" column="INSTITUTION"></property>
+		<property name="cardNo" column="CCARD_NO"></property>
+		<property name="expiry" column="EXPIRYDATE"></property>
+		<property name="holderName" column="HOLDERNAME"></property>
+		<property name="type" column="CARDTYPE"></property>
+
+		<property name="merchantNo" column="MERCHANT_NO"></property>
+		<property name="billType" column="BILLTYPE"></property>
+		<property name="preferenceCard" column="PREFERRED_CARD"></property>
+		<property name="remark" column="REMARK"></property>
+		<property name="custno" column="CUSTNO"></property>
+		<property name="relationId" column="RELATION_ID"></property>
+		<property name="createuserno" column="CREATEUSERNO"></property>
+		<property name="createdatetime" column="CREATEDATETIME"></property>
+		<property name="updateuserno" column="UPDATEUSERNO"></property>
+		<property name="updatedatetime" column="UPDATEDATETIME"></property>
+		<property name="logdatetime" column="LOGDATETIME"></property>
+	</class>
+
+</hibernate-mapping>

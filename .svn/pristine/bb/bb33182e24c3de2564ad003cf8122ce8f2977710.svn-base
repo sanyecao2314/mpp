@@ -1,0 +1,30 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="prod" extends="struts-default">
+		<action name="searchProduct" method="search" class="productAction">
+			<result name="success">/WEB-INF/jsp/prod/list.jsp</result>
+		</action>
+		
+		<action name="displayProduct" method="display" class="productAction">
+			<result name="success">/WEB-INF/jsp/prod/displayproduct.jsp</result>
+		</action>
+		
+		<action name="updateProduct" method="update" class="productAction">
+			<result name="input">/WEB-INF/jsp/prod/displayproduct.jsp</result>
+			<result name="success" type="redirect">displayProduct.action?id=${product.id}</result>
+		</action>
+		
+		<action name="deleteProduct" method="delete" class="productAction">
+			<result name="input">/WEB-INF/jsp/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/prod/list.jsp</result>
+		</action>
+		
+		<action name="createProduct" method="create" class="productAction">
+			<result name="input">/WEB-INF/jsp/prod/createproduct.jsp</result>
+			<result name="success" type="redirect">displayProduct.action?id=${product.id}</result>
+		</action>
+		
+	</package>
+</struts>

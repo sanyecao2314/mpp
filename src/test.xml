@@ -1,0 +1,30 @@
+<profile>
+	<traveler travelerNo="" travelerName="" firstname="" lastname=""
+		firstnameEn="" lastnameEn="" gender="" travelerType="" maritalStatus=""
+		alias="" icidNo="" insuranceNo="" internet="" country="" nationality1=""
+		nationality2="" birthday="" security="" jobTitle="" department1=""
+		department2="" employeeNo="" costcenter="" tr="" projectNumber=""
+		accountNumber="" reqStatement="" feeBased="" securityGroup=""
+		custCategory="" custType="" tcProfile="" exitPermitNo=""
+		exitPermitExpDate="" passport1="" passport1Type="" issueDate1=""
+		expiryDate1="" otherCard="" otherCardType="" otherCardIssueDate=""
+		otherCardExpiryDate="" passport2="" passport2Type="" issueDate2=""
+		expiryDate2="" ebilling="" status="" statusRemark="" officeaddress=""
+		title="" mobile="" officePhone="" faxNo="" email="" dirty="">
+
+		<addresses>
+			<address id="" catalog="" address="" city="" zipCode=""
+				relationId="" createuserno="" updateuserno="" createdatetime=""
+				updatedatetime="" delivery="" billing="" home="" />
+		</addresses>
+
+		<contacts>
+			<contact id="" firstname="" lastname="" firstname_en=""
+				lastname_en="" title="" homephone="" officephone="" faxno="" email=""
+				relationId="" createuserno="" createdatetime="" updateuserno=""
+				updatedatetime=""></contact>
+		</contacts>
+	</traveler>
+
+</profile>
+

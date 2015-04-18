@@ -1,0 +1,51 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="traveler" extends="struts-default">
+
+		<action name="searchTraveler" method="search" class="travelerAction">
+			<result name="input">/WEB-INF/jsp/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/trav/list.jsp</result>
+		</action>
+
+		<action name="displayTraveler" method="display" class="travelerAction">
+			<result name="success">/WEB-INF/jsp/trav/displaytrav.jsp</result>
+		</action>
+
+		<action name="updateTraveler" method="update" class="travelerAction">
+			<result name="input">/WEB-INF/jsp/trav/displaytrav.jsp</result>
+			<result name="success" type="redirect">displayTraveler.action?id=${traveler.id}&amp;tabSelected=${tabSelected}
+			</result>
+		</action>
+
+		<action name="deleteTraveler" method="delete" class="travelerAction">
+			<result name="input">/WEB-INF/jsp/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/trav/list.jsp</result>
+		</action>
+
+		<action name="createTraveler" method="create" class="travelerAction">
+			<result name="step1">/WEB-INF/jsp/trav/createtrav_1.jsp</result>
+			<result name="input">/WEB-INF/jsp/trav/createtrav_2.jsp</result>
+			<result name="success" type="redirect">displayTraveler.action?id=${traveler.id}
+			</result>
+		</action>
+
+		<action name="createSTraveler" method="createAttachedTraveler"
+			class="travelerAction">
+			<result name="step1">/WEB-INF/jsp/trav/createtrav_1.jsp</result>
+			<result name="input">/WEB-INF/jsp/trav/createtrav_2.jsp</result>
+			<result name="success" type="redirect">displayTraveler.action?id=${traveler.id}
+			</result>
+		</action>
+
+		<action name="loadParinPS" method="loadParinPS" class="travelerAction">
+			<result name="step1">/WEB-INF/jsp/trav/createtrav_1.jsp</result>
+			<result name="input">/WEB-INF/jsp/trav/createtrav_2.jsp</result>
+			<result name="success" type="redirect">displayTraveler.action?id=${traveler.id}
+			</result>
+		</action>
+
+	</package>
+
+</struts>
